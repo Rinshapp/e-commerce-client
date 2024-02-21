@@ -25,6 +25,7 @@ export const addProduct = (data)=>{
 }
 
 
+
 export const fetchAllProducts = (data)=>{
     try {
         return instance.get('/products',data)

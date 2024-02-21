@@ -12,7 +12,7 @@ import Protected from "./admin/Protected/Protected";
 import UserHome from "./user/User";
 import UserRegister from "./user/Register/Register";
 import UserLogin from "./user/Login/Login";
-
+import Details from "./components/Details/Details";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       path: "/",
       element: <UserHome/>,
       children:[
-
+  
       ]
     },
     {
@@ -31,6 +31,10 @@ function App() {
     {
       path: "user-login",
       element: <UserLogin />,
+    },
+    {
+      path:"details/:itemId",
+      element:<Details/>
     },
     {
       path: "/admin",

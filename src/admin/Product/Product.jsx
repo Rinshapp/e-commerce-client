@@ -211,7 +211,8 @@ function Product() {
                         />
                       ) : (
                         description
-                      )}
+
+)}
                     </td>
 
                     {edit.status && _id === edit.id ? (
