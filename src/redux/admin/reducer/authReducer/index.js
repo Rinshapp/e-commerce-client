@@ -7,16 +7,16 @@ const userReducer = createSlice({
     name:'userReducer',
     reducers:{
         isAdminLogin:(state,action)=>{
-            localStorage.setItem("token",action.payload.token)
-            localStorage.setItem("useDetails",JSON.stringify(action.payload.users))
-            localStorage.setItem("isLogged",true)
-            return {isLogged:true,token:action.payload.token,userDetails:action.payload.users}
+            // localStorage.setItem("token",action.payload.token)
+            // localStorage.setItem("useDetails",JSON.stringify(action.payload.users))
+            // localStorage.setItem("isLogged",true)
+            // return {isLogged:true,token:action.payload.token,userDetails:action.payload.users}
         },
         isAdminSignup:()=>{
 
         },
         isAdminLoggOut:()=>{
-            return {isLogged:false,token:null,userDetails:null}
+            // return {isLogged:false,token:null,userDetails:null}
         },
         isAdminProfile:()=>{
 

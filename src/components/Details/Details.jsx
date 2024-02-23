@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import axios from "axios";
 import { errorToast } from "../Toast";
 
 const Details = () => {
-  const { itemId } = useParams();
+
+  const navigate=useNavigate();
+    const { itemId } = useParams();
   const [item, setItem] = useState([]);
-  const navigate = useNavigate();
+
   useEffect(() => {
     fetchdata();
   }, [itemId]);
@@ -23,12 +25,17 @@ const Details = () => {
     }
   };
 
-  const handleClick = () => {
-    navigate("/admin/cart");
+  const handleClick = async () => {
+    try {
+      await axios.post("http://localhost:3000/api/order/",{ productId:item._id },{headers:{'Authorization':localStorage.getItem('adminToken')}});
+      navigate('/orders')
+    } catch (error) {
+      errorToast(error.message);
+    }
   };
 
   return (
-    <div className="page" >
+    <div className="page">
       <div className="p-8 ml-10">
         <div className=" text-2xl">{item.name}</div>
 

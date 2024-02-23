@@ -86,11 +86,7 @@ function Product() {
     fetchData();
   }, [refresh]);
 
-  // const headings = {
-  //   headingOne: "Profile",
-  //   headingTwo: "Name",
-  //   headingFour: "Price",
-  // };
+
   const [updateForm, setUpdatForm] = useState({
     name: null,
     price: null,

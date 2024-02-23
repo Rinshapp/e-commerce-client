@@ -4,15 +4,16 @@ import AdminRegister from "./admin/Register/Register";
 import AdminLogin from "./admin/Login/Login";
 import Product from "./admin/Product/Product";
 import Cart from "./admin/Cart/Cart";
-import Orders from "./admin/Orders/Orders";
+import Orders from "./components/Orders/Orders";
 import Payment from "./admin/Payment/Payment";
 import Home from "./admin/Home/Home";
-import User from "./user/User";
+import User from "./user/UserView/User";
 import Protected from "./admin/Protected/Protected";
-import UserHome from "./user/User";
+import UserHome from "./user/UserView/User";
 import UserRegister from "./user/Register/Register";
 import UserLogin from "./user/Login/Login";
 import Details from "./components/Details/Details";
+import Profile from "./admin/Profile/Profile";
 
 
 function App() {
@@ -35,6 +36,10 @@ function App() {
     {
       path:"details/:itemId",
       element:<Details/>
+    },
+    {
+      path:"/orders",
+      element:<Orders/>
     },
     {
       path: "/admin",
@@ -63,6 +68,10 @@ function App() {
         {
           path: "users",
           element:<User/>
+        },
+        {
+          path: "profile",
+          element:<Profile/>
         },
       ],
     },

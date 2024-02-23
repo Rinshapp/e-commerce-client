@@ -4,15 +4,15 @@ import { NavLink } from "react-router-dom";
 import { errorToast, successToast } from "../../components/Toast";
 import { adminLogin } from "../../api/admin";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { isAdminLogin } from "../../redux/admin/reducer/authReducer";
+// import { useDispatch } from "react-redux";
+// import { isAdminLogin } from "../../redux/admin/reducer/authReducer";
 
 
 function Login() {
 
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const [formFiled, setFormField] = useState({});
 
@@ -44,15 +44,18 @@ function Login() {
  
        successToast(response.data.message)
 
-       console.log(response.data.token);
+       localStorage.setItem('adminToken',response.data.token)
+       localStorage.setItem('user',JSON.stringify(response.data.user))
+
+      //  console.log(response.data.token);
 
        if(!response.data.token){
         return errorToast('token is not provided')
        }
 
-       localStorage.setItem("token",response.data.token)
+      //  localStorage.setItem("token",response.data.token)
        
-       dispatch(isAdminLogin(response.data))
+      //  dispatch(isAdminLogin(response.data))
          navigate('/admin')
      } catch (error) {
        errorToast(error.response.data.message,'error')

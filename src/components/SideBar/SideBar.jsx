@@ -32,6 +32,9 @@ function SideBar() {
           <NavLink to={"/admin/users"}> ProductView </NavLink>
         </li>
         <li className=" text-lg rounded-xl my-1 w-[90%] m-auto px-9 py-3 hover:bg-slate-100">
+          <NavLink to={"/admin/profile"}> Profile </NavLink>
+        </li>
+        <li className=" text-lg rounded-xl my-1 w-[90%] m-auto px-9 py-3 hover:bg-slate-100">
           <NavLink onClick={logoutAdmin} > Logout </NavLink>
         </li>
       </ul>

@@ -50,7 +50,7 @@ function Register() {
      const response = await adminRegister(formFiled)
 
       successToast(response.data.message)
-      navigate('/user-login')
+      navigate('/admin-login')
     } catch (error) {
       errorToast(error.response.data.message,'error')
     }
@@ -81,7 +81,7 @@ function Register() {
           className="text-white border-solid border-2 border-indigo-600 w-[4  0%]"
         />
       <NavLink to={"/admin-login"}>
-        <p className="text-white text-xs underline "> Sign-In </p>
+        <p className="text-white text-xs underline "> Login</p>
       </NavLink>
       </form>
     </div>
